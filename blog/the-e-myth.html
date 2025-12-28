@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reflections on Michael Gerber's E-Myth and why technical founders often struggle with the transition from maker to manager to entrepreneur.">
+    <meta name="author" content="Ayesh Ahmad">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://a-ayesh.github.io/blog/the-e-myth.html">
+    <meta property="og:title" content="The E-Myth: Why Good Engineers Make Struggling Founders">
+    <meta property="og:description" content="Reflections on why technical founders often struggle with the transition from maker to manager to entrepreneur.">
+    <meta property="og:image" content="https://a-ayesh.github.io/images/profile.png">
+    <meta property="article:published_time" content="2025-08-14">
+    <meta property="article:author" content="Ayesh Ahmad">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@aayeshahmadd">
+    
+    <title>The E-Myth: Why Good Engineers Make Struggling Founders - Ayesh Ahmad</title>
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="canonical" href="https://a-ayesh.github.io/blog/the-e-myth.html">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-content">
+            <div class="profile-picture">
+                <img src="../images/profile.png" alt="Profile Picture" />
+            </div>
+            <h2 class="sidebar-name">Ayesh Ahmad</h2>
+            <p class="sidebar-bio">Building at the frontier of neuromorphic computing <br><br>Co-Founder & CTO @ <a href="https://www.cvision.dev" target="_blank" rel="noopener noreferrer">CVision</a></p>
+            <ul class="contact-list">
+                <li>
+                    <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Islamabad, Pakistan</span>
+                </li>
+                <li>
+                    <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    <span>National University of Sciences & Technology</span>
+                </li>
+                <li>
+                    <a href="mailto:ayesh@cvision.dev" target="_blank" rel="noopener noreferrer" class="contact-link">
+                        <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <span>ayesh@cvision.dev</span>
+                        <svg class="external-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="contact-link calendly-link">
+                        <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        <span>Schedule a Call</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/ayesh-ahmad" target="_blank" rel="noopener noreferrer" class="contact-link">
+                        <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                        <span>LinkedIn</span>
+                        <svg class="external-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/a-ayesh" target="_blank" rel="noopener noreferrer" class="contact-link">
+                        <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        <span>GitHub</span>
+                        <svg class="external-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://gitlab.com/a-ayesh" target="_blank" rel="noopener noreferrer" class="contact-link">
+                        <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.955 13.587l-1.342-4.135-2.664-8.189c-.135-.423-.73-.423-.867 0L16.418 9.45H7.582L4.919 1.263c-.135-.423-.73-.423-.867 0L1.388 9.452.046 13.587c-.121.375.014.789.331 1.023L12 23.054l11.623-8.443c.318-.235.453-.647.332-1.024"/>
+                        </svg>
+                        <span>GitLab</span>
+                        <svg class="external-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://x.com/aayeshahmadd" target="_blank" rel="noopener noreferrer" class="contact-link">
+                        <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                        <span>X</span>
+                        <svg class="external-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="main-container">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="navbar-content">
+                <button class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+                <a href="../index.html" class="navbar-home-icon" title="Portfolio">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+                <div class="navbar-right">
+                    <a href="../index.html" class="nav-link home-icon" title="Portfolio">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                    </a>
+                    <a href="../bio.html" class="nav-link">Bio</a>
+                    <a href="../education.html" class="nav-link">Education</a>
+                    <a href="../industry.html" class="nav-link">Industry</a>
+                    <a href="../pet-projects.html" class="nav-link">Pet Projects</a>
+                    <a href="../publications.html" class="nav-link">Publications</a>
+                    <a href="../blogs.html" class="nav-link active">Blogs</a>
+                    <a href="../files/resume.pdf" class="nav-link" target="_blank" rel="noopener noreferrer">CV</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="content">
+            <div class="blog-post-header">
+                <h1 class="main-title">The E-Myth: Why Good Engineers Make Struggling Founders</h1>
+                <div class="blog-post-meta">
+                    <span class="blog-read-time">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        7 minute read
+                    </span>
+                </div>
+                <div class="blog-post-date">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    <strong>Published:</strong> August 14, 2025
+                </div>
+            </div>
+
+            <div class="blog-post-content">
+                <p>Michael Gerber's "The E-Myth Revisited" has been around since 1986, but its core insight remains painfully relevant—especially in tech. The "E-Myth" (Entrepreneurial Myth) is the mistaken belief that being good at the technical work of a business means you'll be good at running a business that does that work. Being an excellent baker doesn't make you good at running a bakery. Being an excellent engineer doesn't make you good at running a software company.</p>
+
+                <p>I've watched this play out repeatedly—including in my own journey. The very skills that make someone an exceptional engineer can actively work against them as a founder. Understanding why requires unpacking what Gerber identified decades ago: the three personalities that exist within every business owner.</p>
+
+                <h2>The Technician, The Manager, and The Entrepreneur</h2>
+
+                <p>Gerber argues that every business owner contains three personalities in constant tension:</p>
+
+                <p><strong>The Technician</strong> is the doer. They love the work itself—writing code, solving technical problems, building things. They live in the present, focused on getting today's work done. Left to their own devices, technicians would work on interesting problems forever.</p>
+
+                <p><strong>The Manager</strong> is the pragmatist. They crave order, systems, and predictability. They think about processes, schedules, and organization. Managers live in the past—they want to preserve what works and create repeatable systems.</p>
+
+                <p><strong>The Entrepreneur</strong> is the visionary. They see opportunities, imagine futures, and live for building something bigger than any individual task. Entrepreneurs live in the future, constantly asking "what if?" and "why not?"</p>
+
+                <p>In Gerber's framing, most small business owners are about 70% Technician, 20% Manager, and 10% Entrepreneur. They start businesses not because they wanted to build a business, but because they wanted to escape a boss and do the technical work they loved. They had what Gerber calls an "entrepreneurial seizure"—a moment where they decided that because they could do the work, they should run a business doing that work.</p>
+
+                <h2>The Engineer's Trap</h2>
+
+                <p>For engineers, this trap is particularly acute. Engineering culture celebrates the Technician. We hero-worship the 10x developer, the technical genius who can solve problems others can't. We tell stories of founders who coded their way to success. The implicit message: technical excellence is the path to business success.</p>
+
+                <p>So an excellent engineer starts a company. They can build better products than anyone they might hire. They know exactly how the code should be structured. They have opinions on every technical decision. And so they do what they know: they write code. They solve technical problems. They stay in the Technician role because that's where they're comfortable and competent.</p>
+
+                <p>Meanwhile, no one is selling. No one is systematizing operations. No one is building a team. No one is thinking strategically about where the company should be in five years. The company becomes dependent on the founder's technical output—which doesn't scale.</p>
+
+                <h2>Working In vs. Working On</h2>
+
+                <p>Gerber's most famous distinction is between working "in" your business and working "on" your business. Working in means doing the technical work—serving customers, writing code, building products. Working on means building the systems that enable the business to operate without you.</p>
+
+                <p>For technical founders, this is counterintuitive. Writing code feels productive. It has immediate, visible results. Thinking about business systems feels abstract, maybe even like procrastination. Why spend time documenting processes when you could be shipping features?</p>
+
+                <p>But the math is simple. If your business requires your technical output to operate, your business is limited by your personal capacity. There are only so many hours in a day. At some point, you become the bottleneck. And if you're the bottleneck, the business can't scale.</p>
+
+                <p>Worse, you've created a job, not a business. You work for your company, not the other way around. You've traded one boss for a more demanding one: your own creation.</p>
+
+                <h2>The Turn-Key Revolution</h2>
+
+                <p>Gerber's prescription is to build your business as if you're going to franchise it—even if you never will. Design the business so someone with reasonable skills could run it by following documented systems. Create processes for everything: hiring, onboarding, customer service, product development. Build a business that works without you in the day-to-day.</p>
+
+                <p>This is the "turn-key" model. The business is designed to be operated by turning a metaphorical key—following the system—rather than requiring the founder's genius. McDonald's is the canonical example: systems so well-designed that teenagers can reliably produce the same experience in any location.</p>
+
+                <p>For software companies, this looks like:</p>
+
+                <ul>
+                    <li><strong>Documented engineering practices</strong>: Code standards, review processes, deployment procedures that don't require the founder's involvement</li>
+                    <li><strong>Hiring systems</strong>: Defined criteria, interview processes, and onboarding that can be executed by others</li>
+                    <li><strong>Sales processes</strong>: Repeatable approaches to finding, qualifying, and closing customers</li>
+                    <li><strong>Product strategy frameworks</strong>: Ways to make decisions about what to build that don't require the founder's technical judgment every time</li>
+                </ul>
+
+                <h2>The Identity Challenge</h2>
+
+                <p>The hardest part isn't intellectual—it's emotional. Engineers identify with their technical abilities. Being the best coder in the room is a source of pride, even identity. Stepping back from the technical work feels like abandoning what makes you valuable.</p>
+
+                <p>This is the E-Myth's deepest challenge: building a business requires becoming someone different than the person who started it. The skills that got you here won't get you there. The founder who writes code all day is doing something valuable, but they're not building a company—they're doing a job.</p>
+
+                <p>The shift requires recognizing that building systems is its own kind of technical work. Designing a hiring process is like designing a system. Creating sales playbooks is like writing documentation. Building an organization is like architecture at a different level of abstraction.</p>
+
+                <h2>What This Looks Like in Practice</h2>
+
+                <p>Over the past year, I've tried to internalize these lessons. Some concrete changes:</p>
+
+                <p><strong>I stopped being the default assignee.</strong> If a technical problem could be solved by someone else, even if I could solve it faster, I delegated it. Speed today at the cost of scaling tomorrow is a bad trade.</p>
+
+                <p><strong>I documented everything.</strong> Every decision that might need to be made again got written down. Every process that I executed got turned into a checklist. The goal: anyone else could do what I do.</p>
+
+                <p><strong>I hired for complement, not similarity.</strong> Instead of hiring people who think like me, I hired people with skills I lack. Someone who loves sales. Someone who loves operations. The goal is a team that covers the full spectrum, not a team of technicians.</p>
+
+                <p><strong>I scheduled time for strategy.</strong> The Entrepreneur needs time and space. I block time weekly to think about the business rather than working in it. Where should we be in a year? What's not working? What opportunity are we missing?</p>
+
+                <h2>The Ongoing Struggle</h2>
+
+                <p>I'm not going to pretend I've figured this out. The pull toward technical work is constant. When things get stressful, my instinct is to write code—it's controllable, it shows immediate results, it uses skills I'm confident in.</p>
+
+                <p>But every time I catch myself defaulting to Technician mode, I try to ask: "Is this the highest-leverage thing I could be doing? Or am I just doing what's comfortable?"</p>
+
+                <p>The E-Myth's insight isn't that technical work doesn't matter—it does. It's that building a business requires balancing the Technician with the Manager and Entrepreneur. The technical founder who can't make that balance will build, at best, a successful consulting practice. The one who can will build a company.</p>
+
+                <p>Gerber wrote for bakeries and plumbers, but the lesson applies perfectly to startups. If you're a technical founder, the biggest risk isn't a competitor with better technology. It's your own inability to step back from the keyboard and build something bigger than your own output.</p>
+            </div>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="site-footer">
+            <p>&copy; 2026 Ayesh Ahmad. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>
+

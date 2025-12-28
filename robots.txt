@@ -1,0 +1,8 @@
+# robots.txt for a-ayesh.github.io
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://a-ayesh.github.io/sitemap.xml
+
+
