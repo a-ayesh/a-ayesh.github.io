@@ -1,4 +1,71 @@
 // Website scripts
+const GOOGLE_SCHEDULE_URL =
+    'https://calendar.google.com/calendar/appointments/schedules/AcZssZ19ZJWDYK0ox017f77JEFQxscLZG8oVLniFVQ0KszTwfNerwIJPGVdob6O_ShWV3VXe2SSoxltX?gv=true';
+
+function initGoogleScheduleButtons() {
+    const calendar = window.calendar;
+    if (!calendar || !calendar.schedulingButton) {
+        return;
+    }
+    document.querySelectorAll('.schedule-fab .schedule-call-target').forEach((target) => {
+        if (target.dataset.googleScheduleInitialized === '1') {
+            return;
+        }
+        target.dataset.googleScheduleInitialized = '1';
+        calendar.schedulingButton.load({
+            url: GOOGLE_SCHEDULE_URL,
+            color: '#52adc8',
+            label: 'Schedule a Call',
+            target,
+        });
+    });
+}
+
+function runWhenCalendarReady() {
+    if (window.calendar && window.calendar.schedulingButton) {
+        initGoogleScheduleButtons();
+        return;
+    }
+    let attempts = 0;
+    const id = setInterval(() => {
+        attempts += 1;
+        if (window.calendar && window.calendar.schedulingButton) {
+            clearInterval(id);
+            initGoogleScheduleButtons();
+        } else if (attempts >= 100) {
+            clearInterval(id);
+        }
+    }, 50);
+}
+
+function queueGoogleScheduleInit() {
+    if (document.readyState === 'complete') {
+        runWhenCalendarReady();
+    } else {
+        window.addEventListener('load', runWhenCalendarReady);
+    }
+}
+
+function loadGoogleSchedulingAssets() {
+    if (!document.querySelector('link[href*="calendar/scheduling-button-script.css"]')) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://calendar.google.com/calendar/scheduling-button-script.css';
+        document.head.appendChild(link);
+    }
+
+    if (document.querySelector('script[src*="scheduling-button-script.js"]')) {
+        queueGoogleScheduleInit();
+        return;
+    }
+
+    const script = document.createElement('script');
+    script.src = 'https://calendar.google.com/calendar/scheduling-button-script.js';
+    script.async = true;
+    script.onload = () => queueGoogleScheduleInit();
+    document.head.appendChild(script);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.querySelector('.menu-toggle');
     const navbarRight = document.querySelector('.navbar-right');
@@ -9,7 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
             menuToggle.setAttribute('aria-expanded', isActive);
         });
 
-        // Close menu when clicking outside
         document.addEventListener('click', (event) => {
             if (!menuToggle.contains(event.target) && !navbarRight.contains(event.target)) {
                 navbarRight.classList.remove('active');
@@ -17,9 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Close menu when clicking a link
         const navLinks = navbarRight.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
+        navLinks.forEach((link) => {
             link.addEventListener('click', () => {
                 navbarRight.classList.remove('active');
                 menuToggle.setAttribute('aria-expanded', 'false');
@@ -27,74 +92,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Lazy load Calendly scripts
-    const calendlyLinks = document.querySelectorAll('.calendly-link');
-    calendlyLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            loadCalendly(() => {
-                if (window.Calendly) {
-                    window.Calendly.initPopupWidget({url: 'https://calendly.com/ayesh-cvision/30min'});
-                }
-            });
-        });
-    });
+    loadGoogleSchedulingAssets();
 });
-
-// Load Calendly scripts dynamically
-function loadCalendly(callback) {
-    if (window.Calendly) {
-        callback();
-        return;
-    }
-
-    // Check if script is already loading
-    const existingScript = document.querySelector('script[src*="calendly.com"]');
-    if (existingScript) {
-        // Wait for Calendly to be available
-        const checkCalendly = setInterval(() => {
-            if (window.Calendly) {
-                clearInterval(checkCalendly);
-                callback();
-            }
-        }, 50);
-        // Timeout after 5 seconds
-        setTimeout(() => {
-            clearInterval(checkCalendly);
-            if (window.Calendly) {
-                callback();
-            }
-        }, 5000);
-        return;
-    }
-
-    // Load CSS
-    if (!document.querySelector('link[href*="calendly.com"]')) {
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = 'https://assets.calendly.com/assets/external/widget.css';
-        document.head.appendChild(link);
-    }
-
-    // Load JS
-    const script = document.createElement('script');
-    script.src = 'https://assets.calendly.com/assets/external/widget.js';
-    script.async = true;
-    script.onload = () => {
-        // Wait for Calendly to be available
-        const checkCalendly = setInterval(() => {
-            if (window.Calendly) {
-                clearInterval(checkCalendly);
-                callback();
-            }
-        }, 50);
-        // Timeout after 5 seconds
-        setTimeout(() => {
-            clearInterval(checkCalendly);
-            if (window.Calendly) {
-                callback();
-            }
-        }, 5000);
-    };
-    document.head.appendChild(script);
-}

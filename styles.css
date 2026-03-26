@@ -159,13 +159,33 @@ body {
     color: var(--link-color);
 }
 
-/* Calendly sidebar link */
-.calendly-link {
-    cursor: pointer;
+/* Floating "Schedule a call" (Google Calendar widget mounts in .schedule-call-target) */
+.schedule-fab {
+    position: fixed;
+    z-index: 300;
+    bottom: max(1rem, env(safe-area-inset-bottom, 0px));
+    right: max(1rem, env(safe-area-inset-right, 0px));
+    left: auto;
+    max-width: min(100%, calc(100vw - 2rem));
+    pointer-events: auto;
+    display: flex;
+    justify-content: flex-end;
+    filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.12));
 }
 
-.calendly-link:hover {
-    color: var(--link-color);
+@media (min-width: 48em) {
+    .schedule-fab {
+        bottom: max(1.5rem, env(safe-area-inset-bottom, 0px));
+        right: max(1.5rem, env(safe-area-inset-right, 0px));
+        max-width: min(100%, calc(100vw - 3rem));
+    }
+}
+
+.schedule-fab .schedule-call-target {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 0;
 }
 
 /* Navbar */
